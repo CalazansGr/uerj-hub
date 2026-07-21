@@ -1,0 +1,57 @@
+.cr-banner {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-900));
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+.cr-banner .cr-value { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; }
+.cr-banner p { margin: 0; opacity: 0.9; }
+
+.periodo-tabs { margin-bottom: var(--space-5); }
+
+.periodo-panel { display: none; }
+.periodo-panel.active { display: block; }
+
+.disciplina-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.disciplina-row:last-child { border-bottom: none; }
+
+.disciplina-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.disciplina-head h3 { margin: 0 0 2px; }
+.disciplina-head .prof { color: var(--color-text-muted); font-size: 0.85rem; }
+
+.notas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(60px, 1fr));
+  gap: var(--space-3);
+  max-width: 320px;
+}
+.nota-box {
+  text-align: center;
+  background: var(--color-bg);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+}
+.nota-box .label { font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; font-weight: 700; }
+.nota-box .value { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--color-primary-900); }
+
+.freq-row { display: flex; align-items: center; gap: var(--space-3); max-width: 320px; }
+.freq-row .progress-track { flex: 1; }
+.freq-row .freq-value { font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); width: 40px; text-align: right; }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UERJ Hub</title>
+<link rel="icon" href="assets/img/logo-uerj.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/views/dashboard.css">
+<link rel="stylesheet" href="css/views/notas.css">
+<link rel="stylesheet" href="css/views/disciplinas.css">
+<link rel="stylesheet" href="css/views/bandejao.css">
+<link rel="stylesheet" href="css/views/email.css">
+<link rel="stylesheet" href="css/views/caeng.css">
+<link rel="stylesheet" href="css/views/calendario.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="assets/img/logo-uerj.svg" width="32" height="32" alt="">
+      <span>UERJ Hub</span>
+    </div>
+    <nav id="sidebar-nav" aria-label="Navegação principal"></nav>
+    <div class="sidebar-footer">
+      <button type="button" id="logout-btn-sidebar" class="sidebar-item sidebar-logout" title="Sair" aria-label="Sair">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+        <span class="label">Sair</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar" id="topbar-content"></header>
+    <main id="view-root" class="view-root" tabindex="-1"></main>
+  </div>
+
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação mobile"></nav>
+</div>
+
+<!-- data layer -->
+<script defer src="js/data/user.js"></script>
+<script defer src="js/data/grades.js"></script>
+<script defer src="js/data/courses.js"></script>
+<script defer src="js/data/bandejao.js"></script>
+<script defer src="js/data/emails.js"></script>
+<script defer src="js/data/caeng.js"></script>
+<script defer src="js/data/events.js"></script>
+<script defer src="js/services/dataService.js"></script>
+
+<!-- shared components -->
+<script defer src="js/components/sidebar.js"></script>
+<script defer src="js/components/topbar.js"></script>
+<script defer src="js/components/card.js"></script>
+<script defer src="js/components/badge.js"></script>
+
+<!-- auth -->
+<script defer src="js/auth.js"></script>
+
+<!-- views -->
+<script defer src="js/views/dashboard.js"></script>
+<script defer src="js/views/notas.js"></script>
+<script defer src="js/views/disciplinas.js"></script>
+<script defer src="js/views/bandejao.js"></script>
+<script defer src="js/views/email.js"></script>
+<script defer src="js/views/caeng.js"></script>
+<script defer src="js/views/calendario.js"></script>
+<script defer src="js/views/perfil.js"></script>
+
+<!-- router + bootstrap -->
+<script defer src="js/router.js"></script>
+<script defer src="js/app.js"></script>
+</body>
+</html>

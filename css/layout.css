@@ -1,0 +1,167 @@
+/* ---------- App shell ---------- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Sidebar — desktop/tablet only, mobile uses bottom-nav (see below) */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  width: var(--sidebar-width-collapsed);
+  background: var(--color-surface);
+  border-right: 2px solid var(--color-border);
+  padding: var(--space-4) var(--space-2);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.sidebar-brand span { display: none; font-family: var(--font-heading); font-weight: 800; color: var(--color-primary-900); }
+
+.sidebar-item span.label { display: none; }
+
+.sidebar-footer { margin-top: auto; }
+
+@media (min-width: 768px) {
+  .sidebar { display: flex; }
+  .main-area { margin-left: 0; }
+}
+
+@media (min-width: 1024px) {
+  .sidebar { width: var(--sidebar-width); }
+  .sidebar-brand span { display: inline; }
+  .sidebar-item span.label { display: inline; }
+}
+
+/* Main content area */
+.main-area {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-5);
+  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--color-primary-900);
+}
+
+@media (min-width: 768px) {
+  .topbar-brand { display: none; }
+}
+
+.view-root:focus { outline: none; }
+
+.view-root {
+  flex: 1;
+  padding: var(--space-5);
+  padding-bottom: calc(var(--bottom-nav-height) + var(--space-5));
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .view-root { padding: var(--space-6); padding-bottom: var(--space-6); }
+}
+
+/* Bottom nav — mobile only */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--bottom-nav-height);
+  background: var(--color-surface);
+  border-top: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 20;
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: var(--space-1);
+  min-width: 56px;
+  min-height: 48px;
+}
+.bottom-nav-item.active { color: var(--color-primary-600); }
+.bottom-nav-item .icon { width: 22px; height: 22px; }
+.bottom-nav-item:hover { text-decoration: none; }
+
+@media (min-width: 768px) {
+  .bottom-nav { display: none; }
+}
+
+/* Generic responsive containers */
+.stack { display: flex; flex-direction: column; gap: var(--space-4); }
+.row { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.row-between { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+
+/* Two-column layout (list + detail panel), stacks on mobile */
+.split-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+/* alvo do scrollIntoView no mobile: compensa o topbar sticky */
+.split-view > div:last-child {
+  scroll-margin-top: calc(var(--topbar-height) + var(--space-3));
+}
+@media (min-width: 900px) {
+  .split-view.has-detail { grid-template-columns: 340px 1fr; align-items: start; }
+}
+
+/* Auth screen */
+.auth-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--color-primary-600), var(--color-primary-900));
+  padding: var(--space-4);
+}
+
+.auth-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6);
+  width: 100%;
+  max-width: 400px;
+}

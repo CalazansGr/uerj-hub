@@ -1,0 +1,56 @@
+:root {
+  /* Cores primárias — azul escuro vivo */
+  --color-primary-900: #0B1F4D;
+  --color-primary-700: #142B6B;
+  --color-primary-600: #1E3A8A;
+  --color-primary-500: #2F5FFF;
+  --color-primary-400: #5B7FFF;
+  --color-primary-100: #E8EDFF;
+
+  /* Cores de status / gamificação */
+  --color-success: #58CC02;
+  --color-success-dark: #46A302;
+  --color-warning: #FFC800;
+  --color-warning-dark: #E0AC00;
+  --color-danger: #FF4B4B;
+  --color-danger-dark: #E63E3E;
+  --color-accent-purple: #CE82FF;
+
+  /* Neutros */
+  --color-text: #3C3C3C;
+  --color-text-muted: #5F6368;
+  --color-text-inverse: #FFFFFF;
+  --color-bg: #F7F9FC;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  /* Raios */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 6px rgba(20, 43, 107, 0.08);
+  --shadow-md: 0 6px 16px rgba(20, 43, 107, 0.12);
+  --shadow-lg: 0 12px 28px rgba(20, 43, 107, 0.16);
+
+  /* Tipografia */
+  --font-heading: 'Baloo 2', 'Quicksand', sans-serif;
+  --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+
+  /* Espaçamento */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 76px;
+  --topbar-height: 64px;
+  --bottom-nav-height: 64px;
+}

@@ -1,0 +1,11 @@
+# Configuração local de dev server (não faz parte do projeto)
+.claude/
+
+# Screenshots de referência dos sistemas reais da UERJ (não são deste projeto)
+Webmail Uerj/
+Aluno Online/
+Ava/
+
+# SO / editores
+.DS_Store
+Thumbs.db

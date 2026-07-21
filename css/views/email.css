@@ -1,0 +1,28 @@
+.email-folders { margin-bottom: var(--space-5); }
+
+.email-item {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  /* resets para <button> */
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+  text-align: left;
+  align-items: stretch;
+}
+.email-item:hover { background: var(--color-primary-100); }
+.email-item.selected { background: var(--color-primary-100); border-color: var(--color-primary-400); }
+.email-item .remetente { font-weight: 700; font-size: 0.85rem; color: var(--color-text-muted); }
+.email-item.unread .remetente { color: var(--color-primary-900); }
+.email-item .assunto { font-weight: 600; }
+.email-item.unread .assunto { font-weight: 800; }
+.email-item .data { font-size: 0.75rem; color: var(--color-text-muted); }
+
+.email-detail .assunto-header { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); flex-wrap: wrap; }
+.email-detail .remetente-info { color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.email-detail .corpo { line-height: 1.7; }
