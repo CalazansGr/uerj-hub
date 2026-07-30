@@ -31,7 +31,8 @@ UERJHub.router = (function () {
 
     updateNav(route);
 
-    var navItem = UERJHub.components.nav.ITEMS.filter(function (i) { return i.route === route; })[0];
+    var navItem = UERJHub.components.nav.ITEMS.filter(function (i) { return i.route === route; })[0] ||
+      UERJHub.components.nav.QUICK_LINKS.filter(function (i) { return i.route === route; })[0];
     document.title = navItem ? 'UERJ Hub — ' + navItem.label : 'UERJ Hub';
 
     Promise.resolve(view.render()).then(function (html) {

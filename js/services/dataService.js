@@ -71,6 +71,10 @@ UERJHub.services = (function (data) {
     return resolve(data.bandejao);
   }
 
+  function getContatos() {
+    return resolve(data.contatos);
+  }
+
   function rechargeBandejao(valor, metodo) {
     data.bandejao.saldo = Math.round((data.bandejao.saldo + valor) * 100) / 100;
     var novoId = Math.max.apply(null, data.bandejao.historico.map(function (h) { return h.id; })) + 1;
@@ -98,6 +102,7 @@ UERJHub.services = (function (data) {
     getEvents: getEvents,
     getUpcomingEvents: getUpcomingEvents,
     getBandejao: getBandejao,
-    rechargeBandejao: rechargeBandejao
+    rechargeBandejao: rechargeBandejao,
+    getContatos: getContatos
   };
 })(UERJHub.data);

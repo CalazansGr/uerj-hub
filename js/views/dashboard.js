@@ -11,8 +11,6 @@ UERJHub.views.dashboard = (function () {
     return Math.round(soma / periodo.disciplinas.length);
   }
 
-  var QUICK_LINK_ROUTES = ['notas', 'disciplinas', 'bandejao', 'email', 'caeng', 'calendario'];
-
   function render() {
     return Promise.all([
       svc.getUser(),
@@ -26,8 +24,7 @@ UERJHub.views.dashboard = (function () {
       var user = r[0], periodo = r[1], unread = r[2], events = r[3], caengPosts = r[4], courses = r[5], bandejao = r[6];
       var freq = avgFrequencia(periodo);
 
-      var quickLinks = QUICK_LINK_ROUTES.map(function (route) {
-        var item = UERJHub.components.nav.ITEMS.filter(function (i) { return i.route === route; })[0];
+      var quickLinks = UERJHub.components.nav.QUICK_LINKS.map(function (item) {
         return '<a href="#/' + item.route + '" class="quick-link">' + item.icon + '<span>' + item.label + '</span></a>';
       }).join('');
 

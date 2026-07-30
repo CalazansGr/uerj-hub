@@ -6,16 +6,21 @@ Protótipo de um "hub" unificado para alunos da UERJ — um trabalho de faculdad
 
 ## Funcionalidades
 
-| Tela | O que faz |
-|---|---|
-| **Início** | Visão geral: CR, frequência, e-mails não lidos, próxima aula, saldo do bandejão, próximos eventos e mural do CA |
-| **Notas** | Boletim por período, com abas para períodos anteriores, notas de AP1/AP2/Final e barra de frequência |
-| **Disciplinas** | Lista de disciplinas matriculadas com avisos e materiais publicados por cada uma |
-| **Bandejão** | Saldo do cartão de refeição, recarga simulada via **Pix** (com código copia-e-cola) ou **cartão de crédito/débito**, e histórico de movimentações |
-| **E-mail** | Caixa de entrada, enviados e lixeira, com leitura e resposta simulada de mensagens |
-| **CAENG** | Mural do Centro Acadêmico: avisos, eventos e assembleias, filtráveis por categoria |
-| **Calendário** | Linha do tempo unificada de prazos acadêmicos, aulas e eventos do CA |
-| **Perfil** | Dados cadastrais do aluno e logout |
+O menu lateral segue a mesma divisão dos sistemas reais que o hub unifica: **Aluno Online**, **Webmail**, **Cartão Bandejão** e **Centro Acadêmico** são as portas de entrada; clicar em cada uma abre as telas daquela área.
+
+| Seção | Tela | O que faz |
+|---|---|---|
+| — | **Início** | Visão geral: CR, frequência, e-mails não lidos, próxima aula, saldo do bandejão, próximos eventos e mural do CA |
+| **Aluno Online** | (hub) | Grade de serviços nos moldes do Aluno Online real (Cadastro, Consulta Acadêmica, Inscrição em Disciplinas, Procedimento Acadêmico, Outras Consultas) — os itens implementados abrem a tela real, o resto mostra um aviso de "em construção" |
+| ↳ | Notas | Boletim por período, com abas para períodos anteriores, notas de AP1/AP2/Final e barra de frequência |
+| ↳ | Disciplinas | Lista de disciplinas matriculadas com avisos e materiais publicados por cada uma |
+| **Webmail** | (hub) | Atalhos para Calendário, Mail e Lista de Contatos |
+| ↳ | Mail | Caixa de entrada, enviados e lixeira, com leitura e resposta simulada de mensagens |
+| ↳ | Calendário | Linha do tempo unificada de prazos acadêmicos, aulas e eventos do CA |
+| ↳ | Lista de Contatos | Contatos institucionais (secretaria, CA, professores, TI) com busca |
+| **Cartão Bandejão** | — | Saldo do cartão de refeição, recarga simulada via **Pix** (com código copia-e-cola) ou **cartão de crédito/débito**, e histórico de movimentações |
+| **Centro Acadêmico** | — | Mural do CA: avisos, eventos e assembleias, filtráveis por categoria |
+| — | **Perfil** | Dados cadastrais do aluno e logout |
 
 ## Como rodar
 
@@ -40,14 +45,17 @@ css/
   components.css        botões, cards, badges, inputs, pills, alerts...
   layout.css            sidebar, topbar, bottom-nav, containers
   animations.css        transições e keyframes
-  views/                estilos específicos de cada tela
+  views/                estilos específicos de cada tela (inclui hub.css, dos hubs Aluno Online/Webmail)
 js/
   data/                 dados mock (o "banco de dados" fictício em memória)
   services/
     dataService.js       única camada que as views usam para ler/gravar dados
   components/            sidebar, topbar, card e badge reutilizáveis
   views/                 lógica de cada tela do hub
-  router.js               roteador por hash (#/notas, #/email...)
+    alunoOnline.js        grade de serviços do hub "Aluno Online"
+    webmail.js            atalhos do hub "Webmail" (calendário, mail, contatos)
+    placeholder.js        tela genérica "em construção" dos itens dos hubs sem implementação real
+  router.js               roteador por hash (#/notas, #/aluno-online/em-breve?titulo=...)
   app.js                   bootstrap da aplicação
   auth.js                  sessão fake via sessionStorage
 assets/img/              logo e ícones
