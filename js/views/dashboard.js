@@ -16,26 +16,11 @@ UERJHub.views.dashboard = (function () {
       svc.getUser(),
       svc.getCurrentPeriodGrades(),
       svc.getUnreadEmailCount(),
-      svc.getUpcomingEvents(4),
-      svc.getCaengPosts(),
       svc.getCourses(),
       svc.getBandejao()
     ]).then(function (r) {
-      var user = r[0], periodo = r[1], unread = r[2], events = r[3], caengPosts = r[4], courses = r[5], bandejao = r[6];
+      var user = r[0], periodo = r[1], unread = r[2], courses = r[3], bandejao = r[4];
       var freq = avgFrequencia(periodo);
-
-      var quickLinks = UERJHub.components.nav.QUICK_LINKS.map(function (item) {
-        return '<a href="#/' + item.route + '" class="quick-link">' + item.icon + '<span>' + item.label + '</span></a>';
-      }).join('');
-
-      var eventsHtml = events.map(function (e) {
-        return '<li><span class="title">' + e.titulo + '</span><span class="meta">' + card.formatDate(e.data) + '</span></li>';
-      }).join('') || '<li class="empty-state" style="padding:var(--space-4) 0;">Nenhum evento por perto.</li>';
-
-      var caengHtml = caengPosts.slice(0, 3).map(function (p) {
-        return '<li><span class="title">' + p.titulo + '</span><span class="meta">' + card.formatDate(p.data) + '</span></li>';
-      }).join('');
-
       var proximaAula = courses[0];
 
       return (
@@ -50,19 +35,6 @@ UERJHub.views.dashboard = (function () {
           card.statCard({ label: 'E-mails não lidos', value: unread, hint: 'Caixa de entrada' }) +
           card.statCard({ label: 'Próxima aula', value: proximaAula ? proximaAula.nome : '—', hint: proximaAula ? proximaAula.horario : '' }) +
           card.statCard({ label: 'Saldo do bandejão', value: card.formatCurrency(bandejao.saldo), hint: 'Cartão de refeição' }) +
-        '</div>' +
-
-        '<div class="quick-links">' + quickLinks + '</div>' +
-
-        '<div class="dashboard-cols">' +
-          '<div class="card">' +
-            '<div class="section-head"><h3>Próximos eventos</h3><a href="#/calendario">Ver calendário</a></div>' +
-            '<ul class="preview-list">' + eventsHtml + '</ul>' +
-          '</div>' +
-          '<div class="card">' +
-            '<div class="section-head"><h3>Mural do CAENG</h3><a href="#/caeng">Ver mural</a></div>' +
-            '<ul class="preview-list">' + caengHtml + '</ul>' +
-          '</div>' +
         '</div>'
       );
     });
