@@ -37,6 +37,7 @@
 
 .contato-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-4);
 }
+.contato-card .avatar { margin-top: 2px; }
