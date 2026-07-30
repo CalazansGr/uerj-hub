@@ -10,21 +10,21 @@ UERJHub.components.nav = (function () {
     disciplinas: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20"/></svg>',
     bandejao: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>',
     email: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
-    caeng: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v3a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M13 8.5a3.5 3.5 0 0 1 0 7M16 6a6 6 0 0 1 0 12"/></svg>',
+    ava: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 8l6 4-6 4Z"/><path d="M8 21h8M12 18v3"/></svg>',
     calendario: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>',
     contatos: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c.7-3.4 3-5 6-5s5.3 1.6 6 5"/><path d="M16 5.5a3 3 0 0 1 0 6M19 20c-.4-2-1.3-3.5-2.7-4.4"/></svg>',
     perfil: '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>'
   };
 
   // seções principais do menu lateral (espelha a estrutura pedida: Aluno
-  // Online, Webmail, Cartão Bandejão e Centro Acadêmico como portas de
-  // entrada, cada uma com suas próprias telas dentro)
+  // Online, Webmail, Cartão Bandejão e AVA como portas de entrada, cada
+  // uma com suas próprias telas dentro)
   var ITEMS = [
     { route: 'dashboard', label: 'Início', icon: ICONS.dashboard },
     { route: 'aluno-online', label: 'Aluno Online', icon: ICONS.alunoOnline },
     { route: 'webmail', label: 'Webmail', icon: ICONS.webmail },
     { route: 'bandejao', label: 'Cartão Bandejão', icon: ICONS.bandejao },
-    { route: 'caeng', label: 'Centro Acadêmico', icon: ICONS.caeng },
+    { route: 'ava', label: 'AVA', icon: ICONS.ava },
     { route: 'perfil', label: 'Perfil', icon: ICONS.perfil }
   ];
 
@@ -46,7 +46,6 @@ UERJHub.components.nav = (function () {
     { route: 'disciplinas', label: 'Disciplinas', icon: ICONS.disciplinas },
     { route: 'bandejao', label: 'Bandejão', icon: ICONS.bandejao },
     { route: 'email', label: 'E-mail', icon: ICONS.email },
-    { route: 'caeng', label: 'Centro Acadêmico', icon: ICONS.caeng },
     { route: 'calendario', label: 'Calendário', icon: ICONS.calendario }
   ];
 
@@ -70,7 +69,7 @@ UERJHub.components.nav = (function () {
   function renderBottomNav(activeRoute) {
     var highlighted = highlightedRoute(activeRoute);
     var mobileItems = ITEMS.filter(function (i) {
-      return ['dashboard', 'aluno-online', 'webmail', 'bandejao', 'caeng'].indexOf(i.route) !== -1;
+      return ['dashboard', 'aluno-online', 'webmail', 'bandejao', 'ava'].indexOf(i.route) !== -1;
     });
     return mobileItems.map(function (item) {
       var active = item.route === highlighted;

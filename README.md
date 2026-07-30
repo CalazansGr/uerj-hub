@@ -1,25 +1,25 @@
 # UERJ Hub
 
-Protótipo de um "hub" unificado para alunos da UERJ — um trabalho de faculdade que propõe modernizar e integrar em um único lugar experiências hoje espalhadas entre o **Aluno Online**, o **Webmail (SOGo)**, o **AVA** e a comunicação com os Centros Acadêmicos (hoje só via WhatsApp/grupos).
+Protótipo de um "hub" unificado para alunos da UERJ — um trabalho de faculdade que propõe modernizar e integrar em um único lugar experiências hoje espalhadas entre o **Aluno Online**, o **Webmail (SOGo)**, o **AVA** e o **Cartão Bandejão**.
 
 ⚠️ **Este é um protótipo acadêmico com dados fictícios.** Não se conecta aos sistemas reais da UERJ, não usa credenciais reais, não faz scraping e não processa pagamentos de verdade — inclusive a recarga do cartão do bandejão é 100% simulada. O login aceita qualquer matrícula/senha só para demonstrar a experiência de estar autenticado. Não tem afiliação oficial com a Universidade do Estado do Rio de Janeiro.
 
 ## Funcionalidades
 
-O menu lateral segue a mesma divisão dos sistemas reais que o hub unifica: **Aluno Online**, **Webmail**, **Cartão Bandejão** e **Centro Acadêmico** são as portas de entrada; clicar em cada uma abre as telas daquela área.
+O menu lateral segue a mesma divisão dos sistemas reais que o hub unifica: **Aluno Online**, **Webmail**, **Cartão Bandejão** e **AVA** são as portas de entrada; clicar em cada uma abre as telas daquela área.
 
 | Seção | Tela | O que faz |
 |---|---|---|
-| — | **Início** | Visão geral: CR, frequência, e-mails não lidos, próxima aula, saldo do bandejão, próximos eventos e mural do CA |
+| — | **Início** | Visão geral: CR, frequência, e-mails não lidos, próxima aula e saldo do bandejão |
 | **Aluno Online** | (hub) | Grade de serviços nos moldes do Aluno Online real (Cadastro, Consulta Acadêmica, Inscrição em Disciplinas, Procedimento Acadêmico, Outras Consultas) — os itens implementados abrem a tela real, o resto mostra um aviso de "em construção" |
 | ↳ | Notas | Boletim por período, com abas para períodos anteriores, notas de AP1/AP2/Final e barra de frequência |
 | ↳ | Disciplinas | Lista de disciplinas matriculadas com avisos e materiais publicados por cada uma |
 | **Webmail** | (hub) | Atalhos para Calendário, Mail e Lista de Contatos |
 | ↳ | Mail | Caixa de entrada, enviados e lixeira, com leitura e resposta simulada de mensagens |
-| ↳ | Calendário | Linha do tempo unificada de prazos acadêmicos, aulas e eventos do CA |
-| ↳ | Lista de Contatos | Contatos institucionais (secretaria, CA, professores, TI) com busca |
+| ↳ | Calendário | Linha do tempo unificada de prazos acadêmicos e aulas |
+| ↳ | Lista de Contatos | Contatos institucionais (secretaria, suporte, professores, TI) com busca |
 | **Cartão Bandejão** | — | Saldo do cartão de refeição, recarga simulada via **Pix** (com código copia-e-cola) ou **cartão de crédito/débito**, e histórico de movimentações |
-| **Centro Acadêmico** | — | Mural do CA: avisos, eventos e assembleias, filtráveis por categoria |
+| **AVA** | — | Ambiente Virtual de Aprendizagem: feed de publicações dos professores por disciplina (avisos, datas de prova, instruções) com PDFs anexados de verdade, clicáveis, filtrável por disciplina |
 | — | **Perfil** | Dados cadastrais do aluno e logout |
 
 ## Como rodar
@@ -72,9 +72,9 @@ O projeto foi feito para ser reaproveitado. Nenhuma lógica está amarrada à UE
 1. **Cores e tipografia** → `css/theme.css` (variáveis CSS no `:root`). Troque as cores primárias e prontas: todo o resto do site (botões, badges, gradientes) já usa essas variáveis.
 2. **Logo** → `assets/img/logo-uerj.svg`. É um SVG simples, dá pra substituir por qualquer outro (mantenha proporções ~1:1 para caber no círculo do topbar/sidebar/login).
 3. **Nome da marca** → troque "UERJ Hub" em `index.html`, `app.html` (título da aba, `.sidebar-brand`, `.topbar-brand`).
-4. **Conteúdo mock** → cada arquivo em `js/data/` é só um objeto/array JavaScript. Edite `user.js`, `grades.js`, `courses.js`, `emails.js`, `caeng.js`, `events.js` e `bandejao.js` com os dados que fizerem sentido para a sua instituição.
+4. **Conteúdo mock** → cada arquivo em `js/data/` é só um objeto/array JavaScript. Edite `user.js`, `grades.js`, `courses.js`, `emails.js`, `ava.js`, `events.js`, `contatos.js` e `bandejao.js` com os dados que fizerem sentido para a sua instituição.
 5. **Adicionar ou remover uma aba** → edite o array `ITEMS` em `js/components/sidebar.js` (ícone + rota + label), crie `js/views/<nome>.js` seguindo o padrão de qualquer view existente (`render()` retorna HTML, `afterRender()` liga os eventos) e registre o script em `app.html`.
-6. **Centro Acadêmico → equivalente local** → a tela `caeng` é genérica o suficiente para virar o mural de qualquer grêmio, DCE ou centro acadêmico — só trocar os textos em `js/data/caeng.js`.
+6. **AVA → equivalente local** → a tela `ava` mostra os posts de `js/data/ava.js` (um por professor/disciplina, com anexos em PDF de verdade em `assets/pdfs/`) — troque os textos e os PDFs pelos da sua instituição. Pra gerar novos PDFs de exemplo sem precisar de nenhuma biblioteca, edite a lista `docs` em `scripts/gen-pdfs.js` e rode `node scripts/gen-pdfs.js`.
 
 Sinta-se livre para copiar a ideia inteira, adaptar só uma tela, ou usar como referência de design system em outro projeto de faculdade.
 

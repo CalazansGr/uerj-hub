@@ -8,8 +8,7 @@ UERJHub.views.calendario = (function () {
   var FILTERS = [
     { key: 'todos', label: 'Todos' },
     { key: 'academico', label: 'Acadêmico' },
-    { key: 'aula', label: 'Aulas' },
-    { key: 'caeng', label: 'CAENG' }
+    { key: 'aula', label: 'Aulas' }
   ];
 
   function groupByDate(events) {
@@ -52,7 +51,7 @@ UERJHub.views.calendario = (function () {
 
       return (
         '<div class="section-head"><h1>Calendário</h1></div>' +
-        '<p style="color:var(--color-text-muted);">Prazos acadêmicos, aulas e eventos do CAENG, tudo num só lugar.</p>' +
+        '<p style="color:var(--color-text-muted);">Prazos acadêmicos e aulas, tudo num só lugar.</p>' +
         '<div class="row calendario-filters">' + filters + '</div>' +
         '<div id="calendario-timeline">' + renderGroups(groupByDate(events)) + '</div>'
       );

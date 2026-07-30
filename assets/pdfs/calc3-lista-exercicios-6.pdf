@@ -1,0 +1,42 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 811 >>
+stream
+BT /F1 18 Tf 72 740 Td (Lista de Exercícios 6  Cálculo III) Tj ET
+BT /F1 12 Tf 72 700 Td (Prof. Ricardo Andrade  Engenharia de Produção) Tj ET
+BT /F1 12 Tf 72 680 Td () Tj ET
+BT /F1 12 Tf 72 660 Td (1\) Calcule a integral tripla de f\(x,y,z\) = xyz sobre a região) Tj ET
+BT /F1 12 Tf 72 640 Td (   limitada por 0<=x<=1, 0<=y<=x, 0<=z<=x+y.) Tj ET
+BT /F1 12 Tf 72 620 Td (2\) Determine o volume do sólido delimitado pelas superfícies) Tj ET
+BT /F1 12 Tf 72 600 Td (   z = 4 - x^2 - y^2 e z = 0.) Tj ET
+BT /F1 12 Tf 72 580 Td (3\) Use coordenadas cilíndricas para resolver a integral tripla) Tj ET
+BT /F1 12 Tf 72 560 Td (   de f\(x,y,z\) = x^2 + y^2 sobre o cilindro x^2+y^2<=4, 0<=z<=3.) Tj ET
+BT /F1 12 Tf 72 540 Td () Tj ET
+BT /F1 12 Tf 72 520 Td (Entrega até 25/07/2026, junto com a prova remarcada.) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1173
+%%EOF

@@ -46,12 +46,12 @@ UERJHub.services = (function (data) {
     return resolve(data.emails.filter(function (e) { return e.pasta === 'inbox' && !e.lida; }).length);
   }
 
-  function getCaengPosts() {
-    return resolve(data.caeng.posts.slice().sort(function (a, b) { return new Date(a.data) - new Date(b.data); }));
-  }
-
-  function getCaengInfo() {
-    return resolve(data.caeng);
+  function getAvaPosts(cursoId) {
+    var posts = data.ava;
+    if (cursoId) {
+      posts = posts.filter(function (p) { return p.cursoId === cursoId; });
+    }
+    return resolve(posts.slice().sort(function (a, b) { return new Date(b.data) - new Date(a.data); }));
   }
 
   function getEvents() {
@@ -97,8 +97,7 @@ UERJHub.services = (function (data) {
     getEmails: getEmails,
     getEmailById: getEmailById,
     getUnreadEmailCount: getUnreadEmailCount,
-    getCaengPosts: getCaengPosts,
-    getCaengInfo: getCaengInfo,
+    getAvaPosts: getAvaPosts,
     getEvents: getEvents,
     getUpcomingEvents: getUpcomingEvents,
     getBandejao: getBandejao,

@@ -1,0 +1,10 @@
+# Nunca normalizar quebra de linha nesses formatos — são binários (ou, no
+# caso do PDF gerado por scripts/gen-pdfs.js, texto com offsets de byte
+# exatos no xref que uma conversão LF/CRLF quebraria).
+*.pdf -text binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
