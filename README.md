@@ -80,4 +80,4 @@ Distribuído sob a licença [MIT](LICENSE) — pode copiar, modificar, usar em o
 
 ## Contribuindo
 
-Sugestões, issues e pull requests são bem-vindos. Se você adaptar este projeto para a sua universidade, ficaria muito feliz em saber — abra uma issue contando!
+Sugestões, issues e pull requests são bem-vindos. Se você adaptar este projeto para a sua universidade, ficaria muito feliz em saber — abra uma issue contando! Veja o [CONTRIBUTING.md](CONTRIBUTING.md) para o fluxo de contribuição e ideias de continuidade para próximas gerações.
