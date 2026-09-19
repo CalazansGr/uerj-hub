@@ -1,3 +1,6 @@
+/* Organizador de links (uerj.site): fundo azul escuro e cartões brancos para alto contraste */
+body { background: var(--color-primary-900); }
+
 .links-page {
   max-width: 480px;
   margin: 0 auto;
@@ -8,9 +11,19 @@
   text-align: center;
   margin-bottom: var(--space-5);
 }
-.links-header img { margin: 0 auto var(--space-3); }
-.links-header h1 { color: var(--color-primary-700); }
-.links-header p { color: var(--color-text-muted); }
+.links-logo {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto var(--space-3);
+  padding: 8px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  object-fit: contain;
+}
+.links-header h1 { color: #fff; }
+.links-header p { color: #DCE4FF; }
 
 .links-list {
   display: flex;
@@ -22,50 +35,56 @@
   display: block;
   text-align: center;
   padding: var(--space-4);
-  background: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-bottom-width: 4px;
+  background: #fff;
+  border: 2px solid #fff;
+  border-bottom: 5px solid var(--color-primary-500);
   border-radius: var(--radius-md);
   color: var(--color-text);
   text-decoration: none;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-bottom-color 0.15s ease;
 }
 .link-card:hover,
 .link-card:focus-visible {
   transform: translateY(-2px);
-  border-color: var(--color-primary-500);
-  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--color-warning);
+  box-shadow: var(--shadow-lg);
+  outline: 3px solid var(--color-warning);
+  outline-offset: 2px;
 }
 .link-card:active { transform: translateY(1px); }
 
 .link-title {
   display: block;
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--color-primary-700);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--color-primary-900);
 }
 .link-desc {
   display: block;
   margin-top: 2px;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  color: #3C3C3C;
 }
 
 .link-card-highlight {
-  background: var(--color-primary-500);
-  border-color: var(--color-primary-600);
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  border-bottom-color: var(--color-warning-dark);
   margin-top: var(--space-3);
 }
 .link-card-highlight .link-title,
-.link-card-highlight .link-desc { color: var(--color-text-inverse); }
+.link-card-highlight .link-desc { color: var(--color-primary-900); }
 .link-card-highlight:hover,
-.link-card-highlight:focus-visible { border-color: var(--color-primary-900); }
+.link-card-highlight:focus-visible {
+  border-bottom-color: var(--color-warning-dark);
+  outline-color: #fff;
+}
 
 .links-footer {
   margin-top: var(--space-6);
   text-align: center;
   font-size: 0.8rem;
-  color: var(--color-text-muted);
+  color: #DCE4FF;
 }
