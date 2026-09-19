@@ -19,6 +19,7 @@ UERJHub.components.topbar = (function () {
         '<span>UERJ Hub</span>' +
       '</div>' +
       '<div class="row topbar-actions">' +
+        '<a href="./" class="btn-ghost btn topbar-back" style="padding:8px 14px;" aria-label="Voltar aos links úteis" title="Voltar aos links úteis"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/><path d="M9 12h11"/></svg><span>Links</span></a>' +
         '<a href="#/email" class="btn-ghost btn" style="padding:8px 14px;">E-mails' +
           '<span id="topbar-unread-slot" class="topbar-unread">' + unreadBadge(unreadCount) + '</span>' +
         '</a>' +

@@ -248,3 +248,8 @@
 /* ---------- Topbar ---------- */
 .topbar-actions { margin-left: auto; }
 .topbar-unread .badge { margin-left: 6px; }
+
+/* botão de voltar ao organizador de links: só no topbar mobile (no desktop fica na sidebar) */
+.topbar-back { display: inline-flex; align-items: center; gap: 6px; }
+.topbar-back .icon { width: 18px; height: 18px; }
+@media (min-width: 768px) { .topbar-back { display: none; } }
