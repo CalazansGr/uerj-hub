@@ -15,7 +15,7 @@ UERJHub.components.topbar = (function () {
   function render(user, unreadCount) {
     return (
       '<div class="topbar-brand">' +
-        '<img src="assets/img/logo-uerj.svg" width="28" height="28" alt="">' +
+        '<img src="assets/img/logo-uerj.webp" width="28" height="28" alt="">' +
         '<span>UERJ Hub</span>' +
       '</div>' +
       '<div class="row topbar-actions">' +

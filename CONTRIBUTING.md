@@ -6,7 +6,7 @@ Este projeto foi pensado para ser mantido por várias gerações de alunos, não
 
 - Leia o [README.md](README.md) — principalmente a seção "Estrutura" e "Como adaptar para outra universidade ou curso", que explica onde fica cada coisa.
 - Não há build, não há dependências para instalar. Basta editar os arquivos e recarregar o navegador.
-- Suba um servidor local para testar (`python -m http.server 8080`) em vez de abrir `index.html` direto com `file://`, para evitar problemas de fetch/CORS.
+- Suba um servidor local para testar (`python -m http.server 8080`) em vez de abrir `login/index.html` direto com `file://`, para evitar problemas de fetch/CORS.
 
 ## Fluxo de contribuição
 

@@ -3,54 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UERJ Hub — Entrar</title>
-<link rel="icon" href="assets/img/logo-uerj.svg" type="image/svg+xml">
+<title>Sites UERJ — Links úteis</title>
+<meta name="description" content="Todos os sites importantes da UERJ em um só lugar: Aluno Online, AVA, Webmail, SIG, Wi-Fi e Bandejão.">
+<link rel="icon" href="assets/img/logo-uerj.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/views/login.css">
+<link rel="stylesheet" href="css/links.css">
 </head>
 <body>
 
-<div class="auth-screen">
-  <div class="auth-card pop-in">
-    <div class="auth-header">
-      <img src="assets/img/logo-uerj.svg" width="56" height="56" alt="Logo UERJ Hub">
-      <h1>UERJ Hub</h1>
-      <p>Notas, disciplinas, e-mail e o seu CA, tudo em um só lugar.</p>
-    </div>
+<main class="links-page">
+  <header class="links-header">
+    <img src="assets/img/logo-uerj.webp" width="72" height="72" alt="Logo UERJ">
+    <h1>Sites UERJ</h1>
+    <p>Todos os links importantes da universidade em um só lugar.</p>
+  </header>
 
-    <form id="login-form">
-      <div class="field">
-        <label for="matricula">Matrícula</label>
-        <input type="text" id="matricula" name="matricula" placeholder="Digite sua matrícula" autocomplete="username" inputmode="numeric" required>
-      </div>
-      <div class="field">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-    </form>
+  <nav class="links-list" aria-label="Links úteis da UERJ">
+    <a class="link-card" href="https://share.google/F491KKNge8kRAjS7Q" target="_blank" rel="noopener">
+      <span class="link-title">Aluno Online</span>
+      <span class="link-desc">Notas, inscrição em disciplinas e histórico</span>
+    </a>
+    <a class="link-card" href="https://ava.pr1.uerj.br/login/index.php" target="_blank" rel="noopener">
+      <span class="link-title">AVA UERJ</span>
+      <span class="link-desc">Ambiente Virtual de Aprendizagem</span>
+    </a>
+    <a class="link-card" href="https://webmail.uerj.br/SOGo/" target="_blank" rel="noopener">
+      <span class="link-title">Webmail UERJ</span>
+      <span class="link-desc">E-mail institucional</span>
+    </a>
+    <a class="link-card" href="https://sig.uerj.br/" target="_blank" rel="noopener">
+      <span class="link-title">SIG | Sistema Integrado de Gestão</span>
+      <span class="link-desc">Sistemas acadêmicos e administrativos</span>
+    </a>
+    <a class="link-card" href="https://sou-cadastro.uerj.br/" target="_blank" rel="noopener">
+      <span class="link-title">Sou-Cadastro | Cartão Bandejão</span>
+      <span class="link-desc">Cadastro e cartão do restaurante universitário</span>
+    </a>
+    <a class="link-card" href="https://www.dgti.uerj.br/servicos/wi-fi-uerj" target="_blank" rel="noopener">
+      <span class="link-title">Wi-Fi UERJ</span>
+      <span class="link-desc">DGTI — Diretoria-Geral de Tecnologia da Informação</span>
+    </a>
+    <a class="link-card link-card-highlight" href="login/">
+      <span class="link-title">UERJ Hub</span>
+      <span class="link-desc">Nossa proposta de redesign: tudo isso em um só painel</span>
+    </a>
+  </nav>
 
-    <p class="auth-hint">Protótipo acadêmico — qualquer matrícula e senha funcionam para entrar. Nenhum dado é enviado a sistemas reais da UERJ.</p>
-  </div>
-</div>
+  <footer class="links-footer">
+    Projeto acadêmico. Não é um site oficial da UERJ.
+  </footer>
+</main>
 
-<script defer src="js/auth.js"></script>
-<script defer>
-  document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('login-form');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var matricula = document.getElementById('matricula').value.trim();
-      UERJHub.auth.login(matricula);
-      window.location.href = 'app.html#/dashboard';
-    });
-  });
-</script>
 </body>
 </html>

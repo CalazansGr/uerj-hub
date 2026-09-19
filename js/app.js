@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!UERJHub.auth.isAuthenticated()) {
-    window.location.href = 'index.html';
+    window.location.href = 'login/';
     return;
   }
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btn) {
       btn.addEventListener('click', function () {
         UERJHub.auth.logout();
-        window.location.href = 'index.html';
+        window.location.href = 'login/';
       });
     }
   }

@@ -42,7 +42,7 @@ UERJHub.views.perfil = (function () {
     if (btn) {
       btn.addEventListener('click', function () {
         UERJHub.auth.logout();
-        window.location.href = 'index.html';
+        window.location.href = 'login/';
       });
     }
   }

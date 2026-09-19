@@ -26,7 +26,7 @@ O menu lateral segue a mesma divisão dos sistemas reais que o hub unifica: **Al
 
 Não há build step, dependência de Node ou instalação — é HTML/CSS/JS puro.
 
-1. **Direto no navegador**: dê duplo-clique em `index.html` (algumas funcionalidades de fetch podem exigir servidor local em vez de `file://`, dependendo do navegador).
+1. **Direto no navegador**: dê duplo-clique em `login/index.html` (algumas funcionalidades de fetch podem exigir servidor local em vez de `file://`, dependendo do navegador).
 2. **Servidor local simples** (recomendado):
    ```bash
    python -m http.server 8080
@@ -37,7 +37,9 @@ Não há build step, dependência de Node ou instalação — é HTML/CSS/JS pur
 ## Estrutura
 
 ```
-index.html              tela de login
+index.html              organizador de links (uerj.site)
+login/index.html        tela de login do UERJ Hub (uerj.site/login)
+css/links.css           estilo do organizador de links
 app.html                shell do hub (sidebar + topbar + roteador por hash)
 css/
   theme.css             tokens de design (cores, tipografia, raios, espaçamento)
@@ -70,8 +72,8 @@ O hub usa roteamento por hash (`app.html#/notas`, `app.html#/email`, etc.) para 
 O projeto foi feito para ser reaproveitado. Nenhuma lógica está amarrada à UERJ especificamente — tudo fica em poucos arquivos:
 
 1. **Cores e tipografia** → `css/theme.css` (variáveis CSS no `:root`). Troque as cores primárias e prontas: todo o resto do site (botões, badges, gradientes) já usa essas variáveis.
-2. **Logo** → `assets/img/logo-uerj.svg`. É um SVG simples, dá pra substituir por qualquer outro (mantenha proporções ~1:1 para caber no círculo do topbar/sidebar/login).
-3. **Nome da marca** → troque "UERJ Hub" em `index.html`, `app.html` (título da aba, `.sidebar-brand`, `.topbar-brand`).
+2. **Logo** → `assets/img/logo-uerj.webp`. É a logo oficial da UERJ, dá pra substituir por qualquer outra imagem (mantenha proporções ~1:1 para caber no círculo do topbar/sidebar/login).
+3. **Nome da marca** → troque "UERJ Hub" em `login/index.html`, `app.html` (título da aba, `.sidebar-brand`, `.topbar-brand`).
 4. **Conteúdo mock** → cada arquivo em `js/data/` é só um objeto/array JavaScript. Edite `user.js`, `grades.js`, `courses.js`, `emails.js`, `ava.js`, `events.js`, `contatos.js` e `bandejao.js` com os dados que fizerem sentido para a sua instituição.
 5. **Adicionar ou remover uma aba** → edite o array `ITEMS` em `js/components/sidebar.js` (ícone + rota + label), crie `js/views/<nome>.js` seguindo o padrão de qualquer view existente (`render()` retorna HTML, `afterRender()` liga os eventos) e registre o script em `app.html`.
 6. **AVA → equivalente local** → a tela `ava` mostra os posts de `js/data/ava.js` (um por professor/disciplina, com anexos em PDF de verdade em `assets/pdfs/`) — troque os textos e os PDFs pelos da sua instituição. Pra gerar novos PDFs de exemplo sem precisar de nenhuma biblioteca, edite a lista `docs` em `scripts/gen-pdfs.js` e rode `node scripts/gen-pdfs.js`.

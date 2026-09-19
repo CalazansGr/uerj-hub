@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UERJ Hub — Entrar</title>
+<link rel="icon" href="../assets/img/logo-uerj.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/views/login.css">
+</head>
+<body>
+
+<div class="auth-screen">
+  <div class="auth-card pop-in">
+    <div class="auth-header">
+      <img src="../assets/img/logo-uerj.webp" width="56" height="56" alt="Logo UERJ Hub">
+      <h1>UERJ Hub</h1>
+      <p>Notas, disciplinas, e-mail e o seu CA, tudo em um só lugar.</p>
+    </div>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="matricula">Matrícula</label>
+        <input type="text" id="matricula" name="matricula" placeholder="Digite sua matrícula" autocomplete="username" inputmode="numeric" required>
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+
+    <p class="auth-hint">Protótipo acadêmico — qualquer matrícula e senha funcionam para entrar. Nenhum dado é enviado a sistemas reais da UERJ.</p>
+  </div>
+</div>
+
+<script defer src="../js/auth.js"></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('login-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var matricula = document.getElementById('matricula').value.trim();
+      UERJHub.auth.login(matricula);
+      window.location.href = '../app.html#/dashboard';
+    });
+  });
+</script>
+</body>
+</html>

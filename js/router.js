@@ -18,7 +18,7 @@ UERJHub.router = (function () {
 
   function render() {
     if (!UERJHub.auth.isAuthenticated()) {
-      window.location.href = 'index.html';
+      window.location.href = 'login/';
       return;
     }
 
